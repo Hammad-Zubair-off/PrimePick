@@ -1,7 +1,7 @@
-import { Link, NavLink } from 'react-router-dom';
-import { assets } from '../assets/assets';
-import { useContext, useState } from 'react';
-import { ShopContext } from '../Context/ShopContext';
+import { Link, NavLink } from "react-router-dom";
+import { assets } from "../assets/assets";
+import { useContext, useState } from "react";
+import { ShopContext } from "../Context/ShopContext";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
@@ -38,23 +38,17 @@ const Navbar = () => {
             setShowSearch(true);
           }}
           src={assets.search_icon}
-          alt=""
-          className="w-5 cursor-pointer "
+          alt="search"
+          className="w-5 cursor-pointer"
         />
         <div className="group relative">
           <Link to="/login">
-            <img
-              src={assets.profile_icon}
-              alt=""
-              className="w-5 cursor-pointer"
-            />
+            <img src={assets.profile_icon} alt="profile" className="w-5 cursor-pointer" />
           </Link>
-          
-          </div>
         </div>
 
-        <Link to="/cart" className="relative ">
-          <img src={assets.cart_icon} alt="" className="w-5 min-w-5 " />
+        <Link to="/cart" className="relative">
+          <img src={assets.cart_icon} alt="cart" className="w-5 min-w-5" />
           <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
             {getCartCount()}
           </p>
@@ -62,67 +56,35 @@ const Navbar = () => {
 
         <img
           src={assets.menu_icon}
-          alt=""
-          className="w-5 cursor-pointer sm:hidden "
-          onClick={() => setVisible(!visible)} //visibility toggle (true/false))
+          alt="menu"
+          className="w-5 cursor-pointer sm:hidden"
+          onClick={() => setVisible(!visible)}
         />
       </div>
 
       {/* Sidebar menu for small screens */}
       <div
-        className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white ease-in duration-300
-             ${visible ? 'w-full' : 'w-0'}`}
+        className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white ease-in duration-300 ${
+          visible ? "w-full" : "w-0"
+        }`}
       >
-        <div className="flex flex-col text-gray-600 ">
-          <div
-            onClick={() => {
-              setVisible(false);
-            }}
-            className="flex items-center gap-4 p-3 cursor-pointer"
-          >
-            <img src={assets.dropdown_icon} alt="" className="h-4 rotate-180" />
+        <div className="flex flex-col text-gray-600">
+          <div onClick={() => setVisible(false)} className="flex items-center gap-4 p-3 cursor-pointer">
+            <img src={assets.dropdown_icon} alt="close" className="h-4 rotate-180" />
             <p className="font-semibold">Back</p>
           </div>
 
-          <NavLink
-            onClick={() => {
-              setVisible(false);
-            }}
-            className="py-2 pl-6 border"
-            to="/"
-          >
-            {' '}
-            HOME{' '}
+          <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border" to="/">
+            HOME
           </NavLink>
-          <NavLink
-            onClick={() => {
-              setVisible(false);
-            }}
-            className="py-2 pl-6 border"
-            to="/collection"
-          >
-            {' '}
-            COLLECTION{' '}
+          <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border" to="/collection">
+            COLLECTION
           </NavLink>
-          <NavLink
-            onClick={() => {
-              setVisible(false);
-            }}
-            className="py-2 pl-6 border"
-            to="/about"
-          >
-            {' '}
-            ABOUT{' '}
+          <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border" to="/about">
+            ABOUT
           </NavLink>
-          <NavLink
-            onClick={() => {
-              setVisible(false);
-            }}
-            className="py-2 pl-6 border"
-            to="/contact"
-          >
-            {' '}
-            CONTACT{' '}
+          <NavLink onClick={() => setVisible(false)} className="py-2 pl-6 border" to="/contact">
+            CONTACT
           </NavLink>
         </div>
       </div>
