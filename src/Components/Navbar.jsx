@@ -68,11 +68,12 @@ const Navbar = () => {
               key={path}
               onClick={() => setVisible(false)}
               className="py-2 pl-6 border"
-              to={`/${path}`}
+              to={path === "home" ? "/" : `/${path}`}  // ✅ If "home", use "/"
             >
               {path.toUpperCase()}
             </NavLink>
           ))}
+
         </div>
       </div>
     </div>
