@@ -16,7 +16,11 @@ const Navbar = () => {
       {/* Navigation Links */}
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         {["home", "collection", "about", "contact"].map((path) => (
-          <NavLink key={path} to={`/${path}`} className="flex flex-col items-center gap-1">
+          <NavLink 
+            key={path} 
+            to={path === "home" ? "/" : `/${path}`}  // ✅ "home" nu "/" bana ditta
+            className="flex flex-col items-center gap-1"
+          >
             <p>{path.toUpperCase()}</p>
             <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
           </NavLink>
