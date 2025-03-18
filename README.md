@@ -3,6 +3,8 @@
 
 # PrimePick-eCommerce Platform 🛒  
 **A Modern eCommerce Platform**
+## Deployed Link  
+[Live Project](https://prime-pick-off-hammad-zubair-offs-projects.vercel.app/)  
 
 ## Table of Contents
 - [Overview](#overview)
