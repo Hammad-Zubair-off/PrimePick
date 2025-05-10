@@ -32,7 +32,7 @@ const Contact = () => {
           </p>
 
           <p className="text-gray-800">
-            Tel: <span className="text-gray-500">+1 800 123 1234</span>
+            Tel: <span className="text-gray-500">+92 321 6610180</span>
           </p>
           <p className=" text-gray-800">
             Email: <span className="text-gray-500">admin@PrimePick.com</span>
